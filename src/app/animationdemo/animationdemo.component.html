@@ -1,0 +1,35 @@
+<style>
+  .menu-item {
+    max-width: 256px;
+    position: relative;
+    white-space: normal
+  }
+
+  img {
+    width: 14px;
+    height: 14px;
+    left: 10px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+</style>
+
+<div class="menu-item" (click)="changeStateItem()">
+  <img src="https://image.flaticon.com/icons/svg/747/747376.svg" alt="">
+  <div [@moverLabel]=currentStateItem> Register user </div>
+</div>
+
+<br>
+
+<button (click)="changeState()">Change Size</button>
+
+<nav [@colapsarMenu]=currentState>
+  <details *ngFor="let number of numbers">
+    <summary>Item {{ number }}</summary>
+    <p>Mais informações sobre os detalhes.</p>
+  </details>
+</nav>
+<br />
